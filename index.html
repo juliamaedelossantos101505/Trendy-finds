@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trendy Finds | Online Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">Trendy<span>Finds.</span></a>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#cart">My Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">YOUR EVERYDAY FAVORITES</p>
+    <h1>Find your next<br><span>favorite thing.</span></h1>
+    <p>Affordable finds, made for your everyday style.</p>
+    <a class="shop-button" href="#products">Shop Now ↓</a>
+  </section>
+
+  <main class="container">
+    <section id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Shop our products</h2>
+        </div>
+        <span id="product-count"></span>
+      </div>
+
+      <div class="filters">
+        <input id="search" type="search"
+          placeholder="Search products..." aria-label="Search products">
+
+        <select id="category" aria-label="Filter by category">
+          <option value="All">All Categories</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Beauty">Beauty</option>
+          <option value="Stationery">Stationery</option>
+        </select>
+      </div>
+
+      <div id="product-list" class="product-grid"></div>
+      <p id="empty-products" class="empty-message" hidden>
+        No products found. Try another search.
+      </p>
+    </section>
+
+    <section id="cart" class="cart-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">READY TO CHECK OUT?</p>
+          <h2>Your Shopping Cart</h2>
+        </div>
+      </div>
+
+      <div id="cart-items"></div>
+
+      <div class="cart-summary">
+        <p>Subtotal <strong id="subtotal">₱0.00</strong></p>
+        <p>Shipping <strong id="shipping">₱0.00</strong></p>
+        <p class="grand-total">Total <strong id="total">₱0.00</strong></p>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <h3>Customer Information</h3>
+
+        <label for="customer-name">Full Name</label>
+        <input id="customer-name" name="customerName"
+          type="text" placeholder="Enter your full name"
+          required maxlength="80">
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email"
+          placeholder="example@email.com" required maxlength="120">
+
+        <label for="address">Delivery Address</label>
+        <textarea id="address" name="address"
+          placeholder="House number, street, city"
+          required maxlength="250"></textarea>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+          <option value="">Select payment method</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="E-Wallet (Demo)">E-Wallet (Demo)</option>
+        </select>
+
+        <button class="checkout-button" type="submit">
+          Place Order
+        </button>
+      </form>
+
+      <div id="order-message" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Trendy Finds. Created for an academic project.</p>
+  </footer>
+</body>
+</html>
